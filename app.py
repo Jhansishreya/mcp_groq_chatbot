@@ -118,12 +118,12 @@ with st.sidebar:
         if st.button('Start MCP Server'):
             if st.session_state.mcp_server.start():
                 st.success(f"MCP Server started successfully on port {st.session_state.mcp_server.port}!")
-                st.experimental_rerun()
+                st.rerun()
     else:
         if st.button('Stop MCP Server'):
             st.session_state.mcp_server.stop()
             st.warning("MCP Server stopped!")
-            st.experimental_rerun()
+            st.rerun()
     
     st.markdown("---")
     st.subheader('Chat History')
